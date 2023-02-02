@@ -5,6 +5,18 @@ const config: ThemeConfig = {
     useSystemColorMode: false,
 }
 
-const theme = extendTheme({ config })
+const theme = extendTheme({
+    config,
+    fonts: {
+        heading: "Roboto",
+        body: "Roboto",
+        mono: "Menlo, monospace",
+    },
+    fontWeights: {
+        normal: 400,
+        medium: 500,
+        bold: 700,
+    },
+})
 
 export default theme
