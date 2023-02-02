@@ -1,0 +1,17 @@
+version: "3.8"
+services:
+  dashboard:
+    build:
+      dockerfile: Dockerfile
+      context: .
+      target: development
+    container_name: dashboard
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+      - /usr/src/app/.next
+    command: dev
+    ports:
+      - "3001:3001"
+    labels:
+      - "traefik.http.routers.dashboard.rule=Host(`dashboard.localhost`)"
